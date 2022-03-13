@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=farinter_backend
+POSTGRES_USER=BkkHctdhnPcshSifChCUxsgzBGrrtrgV
+POSTGRES_PASSWORD=j7f7NR4cuyWW8PY9tlBHZJpR0urfIhU5TkEr0fG0tMfNYhu9AyKEocVBITqYLhEV
