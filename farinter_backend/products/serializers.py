@@ -11,4 +11,4 @@ class TaxSerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Product
-        fields = ["id", "price", "tax"]
+        fields = ["id", "name", "price", "tax"]
