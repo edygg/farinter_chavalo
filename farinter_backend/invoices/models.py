@@ -45,3 +45,8 @@ class InvoiceDetail(models.Model):
     class Meta:
         verbose_name = _("Invoice detail")
         verbose_name_plural = _("Invoice details")
+
+    def save(self, *args, **kwargs):
+        real_unit_price = self.product.price - self.discount
+        self.subtotal = real_unit_price * self.quantity
+        super().save(*args, **kwargs)
