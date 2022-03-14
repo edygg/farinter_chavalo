@@ -31,7 +31,21 @@ def add_product_to_invoice(request, format=None):
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 # Quitar producto a factura
+@api_view(["DELETE"])
+def add_product_to_invoice(request, format=None):
+    if request.method == "POST":
+        serializer = serializers.InvoiceDetailSerializer(data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+
+            # TODO Enviar toda la factura nuevamente
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 # Listar facturas
 # Detalle Factura
 
