@@ -16,8 +16,24 @@ urlpatterns = [
         name='products'
     ),
     path(
+        "<int:pk>",
+        generics.RetrieveUpdateDestroyAPIView.as_view(
+            queryset=models.Product.objects.all(),
+            serializer_class=serializers.ProductSerializer
+        ),
+        name='products'
+    ),
+    path(
         "taxes/",
         generics.ListCreateAPIView.as_view(
+            queryset=models.Tax.objects.all(),
+            serializer_class=serializers.TaxSerializer
+        ),
+        name='product-taxes'
+    ),
+    path(
+        "taxes/<int:pk>",
+        generics.RetrieveUpdateDestroyAPIView.as_view(
             queryset=models.Tax.objects.all(),
             serializer_class=serializers.TaxSerializer
         ),
