@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from . import serializers
 
+
 # Nueva factura
 @api_view(["POST"])
 def create_invoice(request, format=None):
@@ -15,7 +16,13 @@ def create_invoice(request, format=None):
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 # Agregar producto a factura
+@api_view(["POST"])
+def add_product_to_invoice(request, format=None):
+    pass
+
+
 # Quitar producto a factura
 # Listar facturas
 # Detalle Factura
