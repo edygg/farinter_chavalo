@@ -16,6 +16,8 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("farinter_backend.users.urls", namespace="users")),
+    path("invoices/", include("farinter_backend.invoices.urls", namespace="invoices")),
+    path("products/", include("farinter_backend.products.urls", namespace="products")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

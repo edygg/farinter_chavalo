@@ -5,18 +5,21 @@ from farinter_backend.core import constants as core_constants
 
 class Invoice(models.Model):
     issue_date = models.DateField(auto_now_add=True)
-    client_name = models.CharField(max_length=255)
+    client_name = models.CharField(max_length=255, null=True, blank=True)
     subtotal = models.DecimalField(
         max_digits=core_constants.Money.MAX_DIGITS,
-        decimal_places=core_constants.Money.DECIMAL_PLACES
+        decimal_places=core_constants.Money.DECIMAL_PLACES,
+        default=core_constants.Money.ZERO
     )
     taxes = models.DecimalField(
         max_digits=core_constants.Money.MAX_DIGITS,
-        decimal_places=core_constants.Money.DECIMAL_PLACES
+        decimal_places=core_constants.Money.DECIMAL_PLACES,
+        default=core_constants.Money.ZERO
     )
     grand_total = models.DecimalField(
         max_digits=core_constants.Money.MAX_DIGITS,
-        decimal_places=core_constants.Money.DECIMAL_PLACES
+        decimal_places=core_constants.Money.DECIMAL_PLACES,
+        default=core_constants.Money.ZERO
     )
 
     class Meta:
@@ -30,11 +33,13 @@ class InvoiceDetail(models.Model):
     quantity = models.IntegerField()
     discount = models.DecimalField(
         max_digits=core_constants.Money.MAX_DIGITS,
-        decimal_places=core_constants.Money.DECIMAL_PLACES
+        decimal_places=core_constants.Money.DECIMAL_PLACES,
+        default=core_constants.Money.ZERO
     )
     subtotal = models.DecimalField(
         max_digits=core_constants.Money.MAX_DIGITS,
-        decimal_places=core_constants.Money.DECIMAL_PLACES
+        decimal_places=core_constants.Money.DECIMAL_PLACES,
+        default=core_constants.Money.ZERO
     )
 
     class Meta:
