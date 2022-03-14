@@ -79,6 +79,9 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "farinter_backend.users",
+    "farinter_backend.core",
+    "farinter_backend.invoices",
+    "farinter_backend.products",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
